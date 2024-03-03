@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Programming Exercise</title>
+  </head>
+
+  <body>
+
+  <h1><b><u>Task 1 - Use CSS to display the following information</u></b></h1>
+  <hr>
+  <br>
+	<h1 id="studentID">8772733 <span id="studentName">Danko Mitrovic</span> </h1> 
+  <h2 id="subjectID">COMP804 <span id="subjectName">Web Security</span> </h2> 
+  <h3 id="assignementDescription">Assignment 1, due at the end of Week 5</h3>
+	<br>
+	<hr>
+	<br>
+  
+
+  <!--Document CSS-->
+  <style>
+    /*Task 1 Styles*/
+    #studentID {font-size:30px; color: red;}
+    #studentName {font-size:30px; color: blue;}
+    #subjectID {font-weight: bold; color: purple;}
+    #subjectName {font-style:italic; color: orange;}
+    #assignementDescription {text-decoration: underline;}
+
+    /*Task 2 Styles*/
+    #activityTitle {font-size:30px; color: red;font-weight: bold;}
+    #activityHeaderRow {font-size:25px; color:white; background-color:darkblue}
+    .oddRow {background-color:white}
+    .evenRow {background-color:beige;}
+    #activityTable{border-collapse: collapse;width:100%}
+    #activityTable th, #activityTable td {border-style: solid;border-color: beige;border-spacing: 1;padding: 1;border-width:2px;}
+    .activityColumn{text-align: left;vertical-align: top;width: 75%;}
+    .dateColumn{text-align: left;vertical-align: top;width: 25%;}
+
+    /*Task 3 Styles*/
+    #webattacksHeaderRow {font-size:25px; color:white; background-color:darkblue}
+    #webattacksTable{border-collapse: collapse;width:100%}
+    #webattacksTable th, #webattacksTable td {border-style: solid;border-color: beige;border-spacing: 1;padding: 1;border-width:2px;}
+    .webattacksName{text-align: left;vertical-align: top;width:40%}
+    .webattacksDescription{text-align: left;vertical-align: top;width:60%}
+
+    /*Task 4 Styles*/
+    .highlighted {
+      background-color: yellow;
+      border: 2px solid orange;
+    }
+
+    #animalImageContainer {
+      max-width: 100%;
+      max-height: 400px;
+      margin-top: 10px;
+    }
+  </style>
+
+<!--Document Javascript-->
+  <script>
+
+    /*Task 4 Javascript*/
+
+    // Function to handle button click
+    function highlightButton(animal, imageUrl, buttonText) {
+          // Highlight the clicked button
+      var buttons = document.querySelectorAll('.highlighted');
+      buttons.forEach(function (button) {
+        button.classList.remove('highlighted');
+      });
+
+      var clickedButton = document.getElementById(animal);
+      clickedButton.classList.add('highlighted');
+
+      // Set focus to the clicked button
+      clickedButton.focus();
+
+      // Define a mapping of button values to additional text
+      var additionalTextMap = {
+        'Lion': 'Lion is clicked',
+        'Frog': 'Frog is clicked',
+        'Dog': 'Dog is clicked'
+      };
+
+      // Update the text field with a message
+      document.getElementById('textField').value = 'User cllicks ' + buttonText + '.';
+
+      // Show the additional text
+      document.getElementById('additionalTextContainer').innerHTML = additionalTextMap[buttonText];
+
+      // Show the image
+      document.getElementById('animalImageContainer').innerHTML = '<img src="' + imageUrl + '" alt="' + buttonText + '">';
+    }
+
+  </script>
+
+
+ <h1><b><u>Task 2 - Use CSS to style a table</u></b></h1>
+ <hr>
+ <br>
+
+
+ <!--Task 2 -->
+  <p id="actyivityTitle">Key Dates - University of Wollongong - UOW </p>
+    <br>
+
+    <!--table with activities and key dates listed -->
+    <table id="activityTable">
+
+      <!--Table header row utilsing document CSS-->
+      <tr id="activityHeaderRow">
+        <th class="activityColumn">
+          Activity
+        </th>
+        <th class="dateColumn">
+          Date
+        </th>
+      </tr>
+    
+      <!--Information contained in the table utilising the document CSS-->
+      <tr class="oddRow">
+        <td class="activityColumn">
+          First day to enrol for re-enrolling (continuing students)
+        </td>
+        <td class="dateColumn">
+          21 Nov 2022
+        </td>
+      </tr>
+
+      <tr class="evenRow">
+        <td class="activityColumn">
+          Orientation
+        </td>
+        <td class="dateColumn">
+          18 Jul 2023
+        </td>
+      </tr>
+
+      <tr class="oddRow">
+        <td class="activityColumn">
+          Lectures Commence (weeks 1-9)
+        </td>
+        <td class="dateColumn">
+          24 Jul - 22 Sep 2023
+        </td>
+      </tr>
+
+      <tr class="evenRow">
+        <td class="activityColumn">
+          Last day to enrol / add subjects yourself
+        </td>
+        <td class="dateColumn">
+          04 Aug 2023
+        </td>
+      </tr>   
+      
+      <tr class="oddRow">
+        <td class="activityColumn">
+          Last day to enrol / add subjects with Head of Students approval
+        </td>
+        <td class="dateColumn">
+          11 Aug 2023
+        </td>
+      </tr>
+
+      <tr class="evenRow">
+        <td class="activityColumn">
+          <b>CENSUS DATE</b>
+          <br>
+          <ul>
+            <li>Fees due</li>
+            <li>Last dayt to wiithdraw from sunject/s without paying for them</li>
+            <li>HECS / FEE HELP dept reporting date</li>
+            <li>Last day to change HECS / FEE HELP billing option</li>
+          </ul>
+          <br>
+          <a href="COMP804_Assessment_Task_3 Information_S124.pdf">Learn more about Census date ></a>
+          <br>   
+        </td>
+        <td class="dateColumn">
+          31 Aug 2023
+        </td>
+      </tr>    
+ 
+      <tr class="oddRow">
+        <td class="activityColumn">
+          Stuident Services and Amenities Fees Due
+        </td>
+        <td class="dateColumn">
+          01 Sep 2023
+        </td>
+      </tr>
+
+    </table>
+	
+  </body>
+
+  <br>
+  <hr>
+  <h1><b><u>Task 3 - HTML & CSS</u></b></h1>
+  <hr>
+  <br>
+
+<!--Task 3 -->
+<!--table with list of webattacks and description with links to sources -->
+    <table id="webattacksTable">
+
+      <!--Table header row utilsing document CSS-->
+      <tr id="webattacksHeaderRow">
+        <th class="webattacksName">
+          Name
+        </th>
+        <th class="webattacksDescription">
+          Web Attacks
+        </th>
+      </tr>
+
+      <!--Information contained 10 types of web attacks in the table utilising the document CSS-->
+      <tr>
+        <td class="webattacksName">
+          <b>Malware</b>
+          <br> <br>
+          <img src="Malware.jpg" width="300px" alt="Malware" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/malware-types-and-detection/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Malware is a catch-all term for a variety of unpleasant softwareming variants such as viruses, ransomware, and spyware. 
+          Malware, short for malicious softwareming, is a type of code written by cybercriminals with the goal of causing widespread damage to data and systems,
+          or gaining unauthorized access to a company.
+          <br><br>
+          <a href="https://www.wallarm.com/what/malware-types-and-detection">https://www.wallarm.com/what/malware-types-and-detection/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Man in the middle attack</b>
+          <br> <br>
+          <img src="Man-in-the-Middle_Attack.jpg" width="300px" alt="Man in the middle attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/what-is-mitm-man-in-the-middle-attack/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          A man-in-the-middle (MITM) represents a sort of cyberattack where an intruder covertly taps transmissions connecting two entities to monitor or alter traffic therebetween. 
+          Malicious ones may utilize MITM attacks to seize passwords or other sensitive data, snoop on the prey, disrupt connections, or distort content.
+          <br><br>
+          <a href="https://www.wallarm.com/what/what-is-mitm-man-in-the-middle-attack">https://www.wallarm.com/what/what-is-mitm-man-in-the-middle-attack/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>DDoS Attack</b>
+          <br> <br>
+          <img src="DDoS_Attack.jpeg" width="300px" alt="DDoS Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/types-of-ddos-attack-and-measures-protection/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Distributed Denial of service attacks are assaults outfitted at making a PC, a cyber-service inaccessible by congesting it with traffic from various sources. 
+          The point is ordinarily to make the computer(s) in question stop administration by utilizing resources of various hosts to cause a disturbance in its rush hour gridlock stream.
+          <br><br>
+          <a href="https://www.wallarm.com/what/types-of-ddos-attack-and-measures-protection">https://www.wallarm.com/what/types-of-ddos-attack-and-measures-protection/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>SQL Injection</b>
+          <br> <br>
+          <img src="SQL_injection.jpeg" width="300px" alt="SQL Injection" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/structured-query-language-injection-sqli-part-1/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Data is among the most crucial parts of every information system. Hence, organizations use databases that are fueled by applications on the web to get clients' information.
+          Now, it’s crucial to properly manage this data. Hence, SQL.
+          <br><br>
+          <a href="https://www.wallarm.com/what/structured-query-language-injection-sqli-part-1">https://www.wallarm.com/what/structured-query-language-injection-sqli-part-1/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Zero-day attack</b>
+          <br> <br>
+          <img src="zero_day_attack.png" width="300px" alt="Zero-day Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/explanation-of-the-zero-day-attack/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          A zero-day weakness is an obscure security weakness or programming blemish that a danger entertainer can focus with noxious code. The expression "Zero-Day" is utilized in light 
+          of the fact that the product merchant was uninformed of their product weakness, and they've had "0" days to deal with a security fix or an update to fix the issue.
+          <br><br>
+          <a href="https://www.wallarm.com/what/structured-query-language-injection-sqli-part-1">https://www.wallarm.com/what/explanation-of-the-zero-day-attack/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Phishing attack</b>
+          <br> <br>
+          <img src="Phishing_Attacks.jpeg" width="300px" alt="Phishing Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/types-of-phishing-attacks-and-business-impact/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Much like any other kind of fraud, the perpetrator can cause a significant amount of damage, especially when the threat persists for an extended period.
+
+          Phishing has a list of negative effects on a business, including loss of money, loss of intellectual property, damage to reputation, and disruption of operational activities. 
+          These effects work together to cause loss of company value, sometimes with irreparable repercussions.
+          <br><br> 
+          <a href="https://www.wallarm.com/what/types-of-phishing-attacks-and-business-impact">https://www.wallarm.com/what/types-of-phishing-attacks-and-business-impact/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>XSS Attack</b>
+          <br> <br>
+          <img src="XSS_attack.jpg" width="300px" alt="XSS Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/what-is-xss-cross-site-scripting/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Cross-site scripting is a sort of web application attack executed at the code end of a web application to get the information of a clueless client. Cross scripting – 
+          as the name appropriately peruses – is done by infusing noxious lines of code in the first code of a trusted web application
+          <br><br> 
+          <a href="https://www.wallarm.com/what/what-is-xss-cross-site-scripting">https://www.wallarm.com/what/what-is-xss-cross-site-scripting/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Social Engineering Attack</b>
+          <br> <br>
+          <img src="Social_Engineering_attack.jpeg" width="300px" alt="Social Engineering Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/social-engineering-types-prevention-methods/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Cyber threats and attacks are becoming more common than anything else as hackers are becoming more advanced and skilled. These attacks are based on two approaches: technical 
+          expertise and human psychology. Social engineering utilizes the latter. Responsible for endless hassle and nuisance, it is more about a human-error process than technical expertise. 
+          <br><br> 
+          <a href="https://www.wallarm.com/what/social-engineering-types-prevention-methods">https://www.wallarm.com/what/social-engineering-types-prevention-methods/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Ransomeware Attack</b>
+          <br> <br>
+          <img src="Ransomware_Attack.png" width="300px" alt="Ransomeware Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/explained-ransomware-attack/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          Any type of computer virus that encrypts and holds hostage the data of its victims is called a ransomeware. The basic information of a customer or company is encrypted, making it difficult 
+          to access documents, data sets, or apps. Then, in order to gain access, you must pay a fee. Ransomware is often meant to spread throughout an organization and target data bases and record 
+          employees, effectively shutting down the entire operation. 
+          <br><br> 
+          <a href="https://www.wallarm.com/what/explained-ransomware-attack">https://www.wallarm.com/what/explained-ransomware-attack/</a>
+          <br>  
+        </td>
+      </tr>
+
+      <tr>
+        <td class="webattacksName">
+          <b>Cryptojacking Attack</b>
+          <br> <br>
+          <img src="Cryptojacking_attack.jpeg" width="300px" alt="Cryptojacking Attack" />
+          <br><br>
+          <i>Source: https://www.wallarm.com/what/what-is-cryptojacking-attack/</i>
+          <br><br>
+        </td>
+        <td class="webattacksDescription">
+          A conceivable threat to cryptocurrency owners, cryptojacking is an attack using which threat attackers can mine cryptocurrency at the expenditure of the target’s resources and network health. 
+          If not managed properly at the premature stage, the consequences of this vulnerability can be too detrimental.
+          <br><br> 
+          <a href="https://www.wallarm.com/what/what-is-cryptojacking-attack">https://www.wallarm.com/what/what-is-cryptojacking-attack/</a>
+          <br>  
+        </td>
+      </tr>
+    </table>
+
+  <br><br>
+  <hr>
+  <h1><b><u>Task 4: Javascript with button</u></b></h1>
+  <hr>
+  <br>
+
+
+  <button id="Lion" onclick="highlightButton('Lion', 'lion.jpg', 'Lion')">Lion</button>
+  <button id="Frog" onclick="highlightButton('Frog', 'Frog.jpg', 'Frog')">Frog</button>
+  <button id="Dog" onclick="highlightButton('Dog', 'Dog.jpg', 'Dog')">Dog</button>
+
+  <br><br>
+
+  <input type="text" id="textField" value="">
+  
+  <br><br>
+  <!-- Container to display additional text -->
+  <div id="additionalTextContainer"></div>
+
+  <!-- Container to display the image -->
+  <div id="animalImageContainer"></div>
+
+
+  <br><br>
+  <hr>
+  <h1><b><u>Task 5: Gihub repository</u></b></h1>
+  <hr>
+  <br>
+
+
+  
+</html>
